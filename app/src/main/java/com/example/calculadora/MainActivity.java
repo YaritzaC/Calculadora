@@ -236,6 +236,33 @@ public class MainActivity extends AppCompatActivity {
             else {
                 resul = operan1 / operan2;
             }
+        } else if (ope==5){
+            resul = Math.pow(operan1,operan2);
+
+        } else if (ope==7){
+            resul = Math.sqrt(operan1);
+        }
+        else if (ope==14){
+            resul = 1;
+            for (double i = operan1; i>=1; i--){
+                resul =resul * i;
+            }
+        }
+        pant.setText("" + resul);
+        operan1 = resul;
+    }
+
+
+    public void clear (View v){
+        pant.setText("");
+        operan1=0.0;
+        operan2=0.0;
+        resul=0.0;
+    }
+
+    public void borrar (View v){
+        if (!pant.getText().toString().equals("")){
+            pant.setText(pant.getText().subSequence(0, pant.getText().length()-1) + "");
         }
     }
 }
